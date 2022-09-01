@@ -43,8 +43,8 @@ pipeline {
             }
             steps {
                jacoco(
-                    execPattern: '**/target/**.exec',
-                    classPattern: '**/target/classes',
+                    execPattern: '${jacoco.jacoco.execPattern}',
+                    classPattern: '${jacoco.jacoco.classPattern}',
                     sourcePattern: '**/src',
                     inclusionPattern: 'com/iamvickyav/**',
                     changeBuildStatus: true,
