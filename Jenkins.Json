@@ -1,0 +1,6 @@
+{
+  "jacoco":{
+    "execPattern": "**/target/**.exec",
+    "classPattern": "**/target/classes",
+           },
+}
