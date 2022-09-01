@@ -21,7 +21,7 @@ pipeline {
                 not {
                     anyOf {
                         branch 'master';
-                        branch 'develop'
+                        branch 'patch-1'
                     }
                 }
            }
@@ -31,7 +31,7 @@ pipeline {
         }
         stage("Run Test cases") {
             when {
-                branch 'develop';
+                branch 'patch-1';
             }
            steps {
                sh "mvn clean test"
@@ -39,7 +39,7 @@ pipeline {
         }
         stage("Check Code coverage") {
             when {
-                branch 'develop'
+                branch 'patch-1'
             }
             steps {
                jacoco(
