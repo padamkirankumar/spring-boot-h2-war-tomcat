@@ -20,8 +20,7 @@ pipeline {
             when {
                 not {
                     anyOf {
-                        branch 'master';
-                        branch 'patch-1'
+                       branch 'patch-1'
                     }
                 }
            }
@@ -54,7 +53,7 @@ pipeline {
         }
         stage("Build & Deploy Code") {
             when {
-                branch 'master'
+                branch 'patch-1'
             }
             steps {
                 sh "mvn tomcat7:deploy"
